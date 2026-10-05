@@ -8,7 +8,7 @@ The environment is centered around **Proxmox VE** and combines virtual machines,
 
 ## Architecture Overview
 
-```text
+```
 Internet
    |
    v
@@ -29,7 +29,11 @@ Managed Switching
    +-- IoT devices
 ```
 
-The design is evolving toward clearer network segmentation, centralized monitoring and repeatable server configuration.
+See the full architecture overview here:
+
+[View architecture diagram](diagrams/architecture.md)
+
+The design is evolving towards clearer network segmentation, centralized monitoring and repeatable server configuration.
 
 ## Design Goals
 
@@ -59,7 +63,7 @@ The design is evolving toward clearer network segmentation, centralized monitori
 
 **Proxmox VE** is used as the primary hypervisor.
 
-Services are placed in VMs or containers depending on their requirements. The aim is not to containerize everything, but to choose the simplest isolation model that fits each workload.
+Services are placed in VMs, containers or LXC depending on their requirements. The aim is not to containerize everything, but to choose the simplest isolation model that fits each workload.
 
 Examples:
 
@@ -91,7 +95,7 @@ Ansible is used to move Linux server configuration away from one-off manual chan
 
 The structure includes concepts such as:
 
-```text
+```
 ansible/
 ├── inventory/
 ├── group_vars/
@@ -148,7 +152,7 @@ This repository will contain documentation covering both the final architecture 
 
 Planned documentation:
 
-```text
+```
 docs/
 ├── architecture.md
 ├── networking.md
