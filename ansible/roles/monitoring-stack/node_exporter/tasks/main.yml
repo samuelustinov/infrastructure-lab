@@ -1,0 +1,20 @@
+---
+- name: Install Prometheus Node Exporter
+  ansible.builtin.apt:
+    name: prometheus-node-exporter
+    state: present
+    update_cache: true
+
+- name: Enable and start Node Exporter
+  ansible.builtin.systemd:
+    name: prometheus-node-exporter
+    enabled: true
+    state: started
+
+- name: Allow Prometheus access to Node Exporter
+  community.general.ufw:
+    rule: allow
+    interface_in: labnet0
+    from_ip: 192.0.2.0/24
+    port: "9100"
+    proto: tcp

@@ -1,0 +1,11 @@
+---
+monitoring_user: labadmin
+
+monitoring_data_dir: "/home/{{ monitoring_user }}/containers/monitoring"
+
+prometheus_image: "docker.io/prom/prometheus:latest"
+grafana_image: "docker.io/grafana/grafana:latest"
+
+prometheus_node_targets:
+  - "192.0.2.11:9100"
+  - "192.0.2.12:9100"

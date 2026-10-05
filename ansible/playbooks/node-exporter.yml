@@ -1,0 +1,7 @@
+---
+- name: Deploy Prometheus Node Exporter
+  hosts: lab_servers
+  become: true
+
+  roles:
+    - node_exporter

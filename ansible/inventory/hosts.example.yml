@@ -1,0 +1,31 @@
+---
+all:
+  children:
+
+    control_nodes:
+      hosts:
+        control:
+          ansible_connection: local
+
+    lab_servers:
+      hosts:
+        lab-ubuntu01:
+          ansible_host: 127.0.0.1
+          ansible_port: 2222
+          ansible_user: labadmin
+
+        lab-ubuntu02:
+          ansible_host: 127.0.0.1
+          ansible_port: 2223
+          ansible_user: labadmin
+
+    monitoring01_hosts:
+      hosts:
+        monitoring01:
+          ansible_host: 192.0.2.78
+          ansible_port: 22
+          ansible_user: monitoradmin
+
+    container_hosts:
+      hosts:
+        lab-ubuntu02:
